@@ -11,23 +11,25 @@ int main()
     Painting p2 = Painting("Les tournesols", v);
     Gallery g = Gallery();
     try {
-        g.addPainting(&p);
+        g.expose(&p);
     }
     catch (std::exception& e) {
         std::cerr << "Error : " << e.what() << std::endl;
     }
     try {
-        g.addPainting(&p2);
+        g.expose(&p2);
     }
     catch (std::exception& e) {
         std::cerr << "Error : " << e.what() << std::endl;
     }
     try {
-        g.addPainting(&p);
+        g.expose(&p);
     }
     catch (std::exception& e) {
         std::cerr << "Error : " << e.what() << std::endl;
     }
+    std::cout << g << std::endl;
+    g.unexpose(&p2);
     std::cout << g << std::endl;
     return 0;
 }
